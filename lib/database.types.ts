@@ -292,23 +292,32 @@ export type Database = {
       users: {
         Row: {
           created_at: string
+          description: string | null
           email: string
+          genres: string[] | null
           id: string
           image: string | null
+          name: string | null
           username: string
         }
         Insert: {
           created_at?: string
+          description?: string | null
           email: string
+          genres?: string[] | null
           id: string
           image?: string | null
+          name?: string | null
           username: string
         }
         Update: {
           created_at?: string
+          description?: string | null
           email?: string
+          genres?: string[] | null
           id?: string
           image?: string | null
+          name?: string | null
           username?: string
         }
         Relationships: []

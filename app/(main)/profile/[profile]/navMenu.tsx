@@ -15,10 +15,6 @@ const NavMenu = ({username}:{username:string}) => {
       <Link className="flex" href={`/profile/${username}/collaborations`}>Collaborations</Link>
       {pathname === `/profile/${username}/collaborations` && <div className="h-0.5 grow bg-accent"/>}
       </div>
-      <div className="w-fit px-1">
-        <Link className="flex" href={`/profile/${username}/about`}>About</Link>
-        {pathname === `/profile/${username}/about` && <div className="h-0.5 grow bg-accent"/>}
-      </div>
   </nav>
   )
 }

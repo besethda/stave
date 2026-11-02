@@ -3,7 +3,6 @@
 import getCurrentUser from "@/lib/supabase/getUser"
 import { createClient } from "@/lib/supabase/serverClient"
 import { SongSchema } from "@/lib/schemas"
-import z from "zod"
 import { redirect } from "next/navigation"
 
 const CreateSong = async (form: FormData) => {
@@ -17,6 +16,7 @@ const CreateSong = async (form: FormData) => {
     key: form.get("key"),
     artist: form.get("artist")
   })
+  
   if(!parsedData.success) return {message: "Check the song details"}
 
   const supabase = await createClient()

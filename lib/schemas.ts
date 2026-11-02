@@ -11,3 +11,10 @@ export const SongSchema = z.object({
   key: z.string().max(8).transform(e=> e||null),
   artist: z.string().transform(e=> e||null)
 })
+
+export const ProfileSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  genres: z.string().transform(genre=> genre.split(",").map(e=> e.trim()).filter(Boolean))
+    .pipe(z.array(z.string().max(30)).min(1))
+})
