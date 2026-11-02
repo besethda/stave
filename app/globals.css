@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+#root,
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
+
+@theme {
+  --color-primary: #F9F6F0;
+  --color-secondary: #FFFFFF;
+  --color-ternary: #F2ECE1;
+
+  --color-border: #E5DCCE;
+
+  --color-accent: #7b2d3b;
+  --color-hover: #651F2E;
+  --color-pressed: #511824;
+
+  --color-brick: #A23B2E;
+  --color-error: #F6E1DB;
+
+  --color-success: #4f6b3f;
+  --color-tint: #E8EBDC;
+
+  --color-text1: #1A1412;
+  --color-text2: #6E6259;
+  --color-text3: #9E9185;
+}
+
+.button {@apply px-3}
+
+svg[viewBox="144 144 512 512"] {
+  fill: var(--color-text2);
+}
+
