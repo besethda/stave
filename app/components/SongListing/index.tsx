@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactEventHandler, useState } from "react"
+import { useState } from "react"
 import PlayIcon from "../icons/play"
 import PauseIcon from "../icons/pause"
 import RecordIcon from "../icons/record"
@@ -20,7 +20,7 @@ const SongListing = ({user, songData}:{user: string | null, songData: Tables<"so
   }
 
   return (
-    <Link href={`/${songData.id}`} className="block max-w-110 hover:-translate-y-1 duration-150 w-full h-fit bg-secondary m-4 border border-border shadow-md rounded-xl p-2">
+    <Link href={`/${songData.id}`} className="block max-w-110 z-8 hover:-translate-y-1 duration-150 w-full h-fit bg-secondary m-4 border border-border shadow-md rounded-xl p-2">
       <div className="flex justify-between">
         <div className="flex gap-3 items-center">
           <div onClick={(e)=> handlePlayPause(e)} className="rounded-[50%] p-1.5 border border-error bg-error">

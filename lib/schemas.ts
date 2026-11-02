@@ -18,3 +18,8 @@ export const ProfileSchema = z.object({
   genres: z.string().transform(genre=> genre.split(",").map(e=> e.trim()).filter(Boolean))
     .pipe(z.array(z.string().max(30)).min(1))
 })
+
+export const PostSchema = z.object({
+  title: z.string(),
+  text: z.string()
+})

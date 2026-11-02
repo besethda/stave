@@ -1,8 +1,10 @@
 import { createClient } from "@/lib/supabase/serverClient"
-import RecordingBox from "./recordingBox"
+import RecordingBox from "../../components/RecordingBox"
 import Profile from "@/app/components/Profile"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import ShareIcon from "@/app/components/icons/share"
+import CreatePost from "@/app/components/CreatePost"
 
 const SingleSong = async ({params}:{params:Promise<{singleSong : string}>}) => {
 
@@ -22,9 +24,12 @@ const SingleSong = async ({params}:{params:Promise<{singleSong : string}>}) => {
       <div className="max-w-7xl p-5 pt-8 w-full h-full">
         <div className="flex w-full">
           <p className="text-sm opacity-75 uppercase">song ·</p>
-          <p className="text-sm opacity-75 uppercase pl-1"> {songData?.created_at.slice(0, 10)}</p>
+          <p className="text-sm opacity-75 uppercase pl-1">{songData?.created_at.slice(0, 10)}</p>
         </div>
-        <h1 className="text-4xl my-3">{songData?.title}</h1>
+        <div className="flex justify-between w-fit items-center gap-4">
+          <h1 className="text-4xl my-3">{songData?.title}</h1>
+          <CreatePost songData={songData}/>
+        </div>
         <div className="flex items-center">
           <div className="relative h-8 w-8">
             <Profile username={songData.owner.username}/>
@@ -36,11 +41,9 @@ const SingleSong = async ({params}:{params:Promise<{singleSong : string}>}) => {
           {songData.tempo && <p className="border px-2 bg-error py-0.5 rounded-2xl border-text3">{songData.tempo}bpm</p>}
         </div>
         <div className="flex">
-
         </div>
-        <RecordingBox />
+        <RecordingBox songId={songData.id}/>
       </div>
-
     </div>
   )
 }

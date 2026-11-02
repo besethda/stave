@@ -22,7 +22,7 @@ const Header = async () => {
         </div>
       </div>
       <div className="h-full flex gap-10 items-center">
-        <div className="border-text3 w-84 rounded-lg px-3 py-1.5 border-2 flex gap-3">
+        <div className="border-text3 w-84 bg-white rounded-lg px-3 py-1.5 border-2 flex gap-3">
           <SearchIcon />
           <input type="text" placeholder="search..." className="focus:outline-none text-xl"/>
         </div>
